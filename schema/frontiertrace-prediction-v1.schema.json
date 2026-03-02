@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frontiertrace.org/schema/frontiertrace-prediction-v1.schema.json",
+  "title": "FrontierTracePredictionV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "instance_id",
+    "predicted_label",
+    "canonical_problem_rewrite",
+    "final_answer_markdown",
+    "assumption_alignment",
+    "evidence_spans"
+  ],
+  "properties": {
+    "instance_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "predicted_label": {
+      "type": "string",
+      "enum": [
+        "solved",
+        "partial",
+        "open",
+        "refuted",
+        "unclear"
+      ]
+    },
+    "canonical_problem_rewrite": {
+      "type": "string",
+      "minLength": 1
+    },
+    "final_answer_markdown": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assumption_alignment": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "assumption_id",
+          "alignment"
+        ],
+        "properties": {
+          "assumption_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "alignment": {
+            "type": "string",
+            "enum": [
+              "matched",
+              "mismatched",
+              "unknown"
+            ]
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "evidence_spans": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "paper_id",
+          "doc_id",
+          "span_text"
+        ],
+        "properties": {
+          "paper_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "doc_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "span_text": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}
