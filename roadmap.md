@@ -1,6 +1,6 @@
 # FrontierTrace Agentic Benchmark Roadmap
 
-Last updated: 2026-03-02 00:33 UTC
+Last updated: 2026-03-02 01:14 UTC
 Project slug: `frontiertrace-agentic-benchmark`
 
 This roadmap consolidates three prior design deliverables into one execution-gated plan:
@@ -24,12 +24,14 @@ This roadmap consolidates three prior design deliverables into one execution-gat
 ### Deliverables
 - Root `roadmap.md`
 - `docs/README.md`
-- `docs/project-init-resume-workflow.md`
+- `docs/project-init-workflow.md`
+- `docs/project-resume-workflow.md`
 
 ### Success Metrics (must pass)
 - `docs/` exists and contains references, workflow, and implementation notes.
 - The roadmap defines milestone gates with objective pass/fail criteria.
 - A new session can start by reading roadmap + docs without external chat context.
+- Project remote strategy decision is documented (`remote-enabled` or deferred with trigger condition).
 
 ## Milestone 1: Problem Canonicalization Spec Freeze
 

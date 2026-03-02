@@ -1,11 +1,13 @@
 # FrontierTrace Docs Index
 
-Last updated: 2026-03-02 00:33 UTC
+Last updated: 2026-03-02 01:14 UTC
 
 This folder holds detailed project knowledge and reference materials. The root `roadmap.md` is the execution-gated source of truth for delivery sequencing.
 
 ## Core docs
-- `project-init-resume-workflow.md`: required startup/resume read order.
+- `project-init-workflow.md`: one-time project bootstrap procedure.
+- `project-resume-workflow.md`: milestone-scoped continuation procedure.
+- `project-init-resume-workflow.md`: compatibility pointer to the split workflow docs.
 - `source-deliverables.md`: consolidated summary of the three design PDFs.
 - `canonical-schema.md`: canonical problem representation contract.
 - `lineage-tracing.md`: lineage graph + solver-candidate tracing design.
