@@ -1,9 +1,17 @@
 # FrontierTrace Agentic Benchmark Roadmap
 
-Last updated: 2026-03-02 01:47 UTC
+Last updated: 2026-03-14 15:52 UTC
 Project slug: `frontiertrace-agentic-benchmark`
 
 Remote strategy status: `remote-enabled` (GitHub origin active at `git@github.com:murphytheagent/frontiertrace-agentic-benchmark.git`).
+
+## Current Status
+
+- Milestone 0 gate: complete.
+- Active milestone: Milestone 1 (problem canonicalization spec freeze).
+- Active review surface: PR #1 (`feat/m1-schema-freeze` -> `main`) is still `OPEN` / `CLEAN` at head `9a80847` with `2` unresolved non-outdated review threads.
+- Local-review status: the 2026-03-14 bounded `review_project.sh --base main` pass still did not reach a terminal verdict inside the `300`-second maintenance bound.
+- Live blocker set from direct repo inspection is unchanged: `source_statement.statement_spans` still overrun the packaged `statement_text` in rows such as `ft_m1_001` and `ft_m1_008`, `schema/frontiertrace-instance-v1.schema.json` still does not encode the documented `solved_hidden_solver => solved` invariant, and `ft_m1_008` still has `supporting_paper_ids=[]`, so Milestone 1 remains review-blocked even before the independent relabel gate is revisited.
 
 This roadmap consolidates three prior design deliverables into one execution-gated plan:
 1. `frontiertrace_benchmark_proposal.pdf` (initial benchmark blueprint)
