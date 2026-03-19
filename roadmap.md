@@ -1,6 +1,6 @@
 # FrontierTrace Agentic Benchmark Roadmap
 
-Last updated: 2026-03-14 15:52 UTC
+Last updated: 2026-03-19 22:20 UTC
 Project slug: `frontiertrace-agentic-benchmark`
 
 Remote strategy status: `remote-enabled` (GitHub origin active at `git@github.com:murphytheagent/frontiertrace-agentic-benchmark.git`).
@@ -9,8 +9,9 @@ Remote strategy status: `remote-enabled` (GitHub origin active at `git@github.co
 
 - Milestone 0 gate: complete.
 - Active milestone: Milestone 1 (problem canonicalization spec freeze).
-- Active review surface: PR #1 (`feat/m1-schema-freeze` -> `main`) is still `OPEN` / `CLEAN` at head `9a80847` with `2` unresolved non-outdated review threads.
-- Local-review status: the 2026-03-14 bounded `review_project.sh --base main` pass still did not reach a terminal verdict inside the `300`-second maintenance bound.
+- Active review surface: PR #1 (`feat/m1-schema-freeze` -> `main`) is still `OPEN` / `CLEAN` at published head `9a80847` with `2` unresolved non-outdated review threads.
+- Local branch status: the current checkout is still one docs-only commit ahead at `87d8c36`, so the local branch and the published PR remain separate review surfaces.
+- Local-review status: the 2026-03-19 bounded `review_project.sh --base main` pass again timed out before a terminal verdict, so the branch is still not locally review-cleared.
 - Live blocker set from direct repo inspection is unchanged: `source_statement.statement_spans` still overrun the packaged `statement_text` in rows such as `ft_m1_001` and `ft_m1_008`, `schema/frontiertrace-instance-v1.schema.json` still does not encode the documented `solved_hidden_solver => solved` invariant, and `ft_m1_008` still has `supporting_paper_ids=[]`, so Milestone 1 remains review-blocked even before the independent relabel gate is revisited.
 
 This roadmap consolidates three prior design deliverables into one execution-gated plan:
