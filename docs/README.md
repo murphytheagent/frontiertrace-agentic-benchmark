@@ -24,5 +24,5 @@ This folder holds detailed project knowledge and reference materials. The root `
 
 ## Current status note
 - PR #1 (`feat/m1-schema-freeze`) is still the active Milestone 1 review surface on published head `9a80847`, with 2 unresolved non-outdated review threads.
-- The local checkout remains one docs-only commit ahead at `87d8c36`, so root coordination artifacts should treat the local branch and the published PR as distinct.
+- The local checkout now includes additional maintenance doc refreshes beyond the published PR head, so root coordination artifacts should treat the local branch and the published PR as distinct.
 - The blocker set is unchanged: the packaged seed `statement_spans` still overrun `statement_text`, the instance schema still omits the documented `solved_hidden_solver => solved` invariant, and `ft_m1_008` still lacks supporting papers for its `partial` label.
