@@ -1,6 +1,6 @@
 # FrontierTrace Docs Index
 
-Last updated: 2026-03-19 22:20 UTC
+Last updated: 2026-03-20 19:47 UTC
 
 This folder holds detailed project knowledge and reference materials. The root `roadmap.md` is the execution-gated source of truth for delivery sequencing.
 
@@ -23,6 +23,6 @@ This folder holds detailed project knowledge and reference materials. The root `
 - `data/seeds/m1_seed_set_v1.jsonl`: first 10 canonicalized seed problems for Milestone 1 validation.
 
 ## Current status note
-- PR #1 (`feat/m1-schema-freeze`) is still the active Milestone 1 review surface on published head `9a80847`, with 2 unresolved non-outdated review threads.
-- The local checkout now includes additional maintenance doc refreshes beyond the published PR head, so root coordination artifacts should treat the local branch and the published PR as distinct.
+- PR #1 (`feat/m1-schema-freeze`) is still the active Milestone 1 review surface on published head `ba1783f`, with 3 unresolved non-outdated review threads.
+- The local checkout and the published PR head now match again on `ba1783f`.
 - The blocker set is unchanged: the packaged seed `statement_spans` still overrun `statement_text`, the instance schema still omits the documented `solved_hidden_solver => solved` invariant, and `ft_m1_008` still lacks supporting papers for its `partial` label.
