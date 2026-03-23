@@ -9,10 +9,8 @@ Remote strategy status: `remote-enabled` (GitHub origin active at `git@github.co
 
 - Milestone 0 gate: complete.
 - Active milestone: Milestone 1 (problem canonicalization spec freeze).
-- Active review surface: PR #1 (`feat/m1-schema-freeze` -> `main`) is still `OPEN` / `CLEAN` on its current published head, with `3` unresolved non-outdated review threads.
 - Local branch status: the current checkout and the published PR surface now match again.
-- Local-review status: the 2026-03-19 bounded `review_project.sh --base main` pass again timed out before a terminal verdict, so the branch is still not locally review-cleared.
-- Live blocker set from direct repo inspection is unchanged: `source_statement.statement_spans` still overrun the packaged `statement_text` in rows such as `ft_m1_001` and `ft_m1_008`, `schema/frontiertrace-instance-v1.schema.json` still does not encode the documented `solved_hidden_solver => solved` invariant, and `ft_m1_008` still has `supporting_paper_ids=[]`, so Milestone 1 remains review-blocked even before the independent relabel gate is revisited.
+- Milestone 1 remains review-blocked. Open blockers and review surfaces moved to backlog.md.
 
 This roadmap consolidates three prior design deliverables into one execution-gated plan:
 1. `frontiertrace_benchmark_proposal.pdf` (initial benchmark blueprint)
