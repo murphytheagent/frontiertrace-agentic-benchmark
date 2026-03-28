@@ -11,5 +11,5 @@ These must be resolved before Milestone 1 can pass review:
 
 ## Open Review Surface
 
-- PR #1 (`feat/m1-schema-freeze` -> `main`) is still `OPEN` / `CLEAN` with 3 unresolved non-outdated review threads.
-- The 2026-03-19 bounded `review_project.sh --base main` pass timed out before a terminal verdict, so the branch is still not locally review-cleared.
+- PR #1 (`feat/m1-schema-freeze` -> `main`) is still `OPEN` / `CLEAN` with 7 unresolved non-outdated review threads.
+- The 2026-03-28 bounded `review_project.sh --base main --timeout 120` pass timed out before a terminal verdict, so the branch is still not locally review-cleared.
