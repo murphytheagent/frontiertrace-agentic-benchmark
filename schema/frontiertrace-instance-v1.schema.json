@@ -1,0 +1,254 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frontiertrace.org/schema/frontiertrace-instance-v1.schema.json",
+  "title": "FrontierTraceInstanceV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "instance_id",
+    "problem_id",
+    "task_variant",
+    "cutoff_date",
+    "source_statement",
+    "canonical_problem",
+    "status_by_cutoff",
+    "annotator_metadata"
+  ],
+  "properties": {
+    "instance_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "problem_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_variant": {
+      "type": "string",
+      "enum": [
+        "solved_hidden_solver",
+        "still_open_by_cutoff"
+      ]
+    },
+    "cutoff_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "source_statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_title",
+        "source_url",
+        "statement_text",
+        "statement_spans"
+      ],
+      "properties": {
+        "source_title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "statement_text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "statement_spans": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "doc_id",
+              "start_char",
+              "end_char"
+            ],
+            "properties": {
+              "doc_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "start_char": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end_char": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "canonical_problem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_statement",
+        "objects_and_domains",
+        "assumption_ledger",
+        "solution_acceptance_criteria",
+        "allowed_equivalences"
+      ],
+      "properties": {
+        "canonical_statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "objects_and_domains": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "assumption_ledger": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "assumption_id",
+              "text",
+              "kind",
+              "status"
+            ],
+            "properties": {
+              "assumption_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "domain",
+                  "regularity",
+                  "oracle",
+                  "algorithmic",
+                  "evaluation"
+                ]
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "required",
+                  "relaxed",
+                  "unknown"
+                ]
+              }
+            }
+          }
+        },
+        "solution_acceptance_criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "criterion_id",
+              "text",
+              "required"
+            ],
+            "properties": {
+              "criterion_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "required": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "allowed_equivalences": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "status_by_cutoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "rationale",
+        "supporting_paper_ids"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "enum": [
+            "solved",
+            "partial",
+            "open",
+            "refuted",
+            "unclear"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "supporting_paper_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "annotator_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_annotator",
+        "secondary_annotator",
+        "agreement_score",
+        "review_status"
+      ],
+      "properties": {
+        "primary_annotator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "secondary_annotator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "agreement_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "review_status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "reviewed",
+            "approved"
+          ]
+        }
+      }
+    }
+  }
+}

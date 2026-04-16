@@ -1,7 +1,16 @@
 # FrontierTrace Agentic Benchmark Roadmap
 
-Last updated: 2026-03-02 01:14 UTC
+Last updated: 2026-03-20 19:54 UTC
 Project slug: `frontiertrace-agentic-benchmark`
+
+Remote strategy status: `remote-enabled` (GitHub origin active at `git@github.com:murphytheagent/frontiertrace-agentic-benchmark.git`).
+
+## Current Status
+
+- Milestone 0 gate: complete.
+- Active milestone: Milestone 1 (problem canonicalization spec freeze).
+- Local branch status: the current checkout and the published PR surface now match again.
+- Milestone 1 remains review-blocked. Open blockers and review surfaces moved to backlog.md.
 
 This roadmap consolidates three prior design deliverables into one execution-gated plan:
 1. `frontiertrace_benchmark_proposal.pdf` (initial benchmark blueprint)
@@ -42,8 +51,10 @@ This roadmap consolidates three prior design deliverables into one execution-gat
 
 ### Deliverables
 - Frozen canonical instance schema (`docs/canonical-schema.md`)
-- Annotator guidance for assumption normalization
-- 10 seed problems converted into canonical form
+- Machine-checkable schema files (`schema/frontiertrace-instance-v1.schema.json`, `schema/frontiertrace-prediction-v1.schema.json`)
+- Annotator guidance for assumption normalization (`docs/assumption-normalization-guidelines.md`)
+- Evaluator interface draft (`docs/evaluator-interface.md`)
+- 10 seed problems converted into canonical form (`data/seeds/m1_seed_set_v1.jsonl`)
 
 ### Success Metrics (must pass)
 - Schema completeness: 100% required fields populated on 10/10 seeds.
